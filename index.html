@@ -30,14 +30,14 @@
                 $('#execute').click(function () {
                     var code = $('#code').val();
                     var cmd = $('#cmd').val();
-                    var input = $('#input').val();
+                    var input = $('#input_data').val();
                     $.post('api/cpp_compiler.php', {
                         code: code,
                         cmd: cmd,
                         input: input
                     },
                     function (data) {
-                        $('#output').text(data);
+                        $('#output').val(data);
                     });
                 });
             });

@@ -2,7 +2,7 @@
     define("CODE_TERMINATOR", "###end-of-code###");
     define("COMMAND_TERMINATOR", "###end-of-command###");
     define("INPUT_TERMINATOR", "###end-of-input###");
-    
+    echo var_dump($_POST);
     $code = $_POST['code'];
     $cmd = $_POST['cmd'];
     $input = $_POST['input'];
