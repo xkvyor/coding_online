@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Coding Online</title>
+    </head>
+    <body>
+        <div id="header">
+            <h1>Coding Online</h1>
+        </div>
+        <div id="container">
+            <p>Coding Here: </p>
+            <input id="code" type="text">
+            <p>Command Line: </p>
+            <input id="cmd" type="text">
+            <p>Input Data: </p>
+            <input id="input_data" type="text">
+            <input id="execute" value="execute" type="button">
+            <p>Output: </p>
+            <input id="output" type="text">
+        </div>
+        <div id="footer">
+            <p>powered by xkvyor</p>
+            <p>email: xkvyor@gmail.com</p>
+        </div>
+        <script src="scripts/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                $('#execute').click(function () {
+                    var code = $('#code').val();
+                    var cmd = $('#cmd').val();
+                    var input = $('#input').val();
+                    $.post('api/cpp_compiler.php', {
+                        code: code,
+                        cmd: cmd,
+                        input: input
+                    },
+                    function (data) {
+                        $('#output').text(data);
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
